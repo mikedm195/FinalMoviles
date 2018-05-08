@@ -38,7 +38,7 @@ export class Api
     this.router.put('/agencia/', this.agenciaCtrl.setAgencia);
     this.router.delete('/agencia/', this.agenciaCtrl.deleteAgencia);    
 
-    this.router.get('/cliente/', this.viajeCtrl.getViaje);
+    this.router.get('/cliente/', this.clienteCtrl.getCliente);
     this.router.post('/cliente/', this.clienteCtrl.saveCliente);
     this.router.put('/cliente/', this.clienteCtrl.setCliente);
     this.router.delete('/cliente/',this.clienteCtrl.deleteCliente);
