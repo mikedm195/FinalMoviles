@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         nombreAgencia = (TextView) findViewById(R.id.agencia);
         mRecyclerView = (RecyclerView) findViewById(R.id.viajes_list_recycler);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         getAgencia();
 
@@ -121,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Log.w("value", response.toString(4));
                             JSONArray res = new JSONArray(response);
 
                             JSONObject ag = res.getJSONObject(0);

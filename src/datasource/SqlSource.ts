@@ -148,7 +148,8 @@ export class SqlSource implements SqlRepository {
         "FROM exf_Viajes " +
         ((viajeId) ?
           ("WHERE id = " + viajeId)
-          : "");
+          : "") +
+          " ORDER BY id DESC";
 
       this.sql.query(query, function (err, result, fields) {
         if (err) return reject(err);
