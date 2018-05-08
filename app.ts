@@ -7,7 +7,6 @@ import * as cors from "cors";
 import * as socket from "socket.io";
 
 import Api from "./routes/api";
-import Resources from "./routes/resources";
 
 export class App
 {

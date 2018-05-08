@@ -5,18 +5,16 @@ import SqlSource from "../../src/datasource/SqlSource";
 import { CtrlUtil } from "./CtrlUtil";
 
 
-export default class AgenciaCtrl
+export default class PlatilloCtrl
 {
-    saveAgencia(req: Request, res: Response, next: NextFunction)
+    savePlatillo(req: Request, res: Response, next: NextFunction)
     {                
         let cart = { 
-            nombre: req.body.nombre,
-            direccion: req.body.direccion,
-            imagen: req.body.imagen,            
-            telefono: req.body.telefono
+            fecha: req.body.fecha,
+            cliente: req.body.cliente
         };
 
-        SqlSource.saveAgencia(cart)
+        SqlSource.savePlatillo(cart)
             .then((result: number) =>
             {
                 let out = { id: result }
@@ -24,37 +22,35 @@ export default class AgenciaCtrl
             });
     }
 
-    getAgencia(req: Request, res: Response, next: NextFunction)
+    getPlatillo(req: Request, res: Response, next: NextFunction)
     {
-        let agenciaId = req.query.id;        
-        SqlSource.getAgencia(agenciaId)
+        let platilloId = req.query.id;        
+        SqlSource.getPlatillo(platilloId)
             .then((result: any) =>
             {                
                 CtrlUtil.sendObject(res, result);
             });
     }        
 
-    setAgencia(req: Request, res: Response, next: NextFunction)
+    setPlatillo(req: Request, res: Response, next: NextFunction)
     {
 
         let cart = { 
             id: req.body.id,
-            nombre: req.body.nombre,
-            direccion: req.body.direccion,
-            imagen: req.body.imagen,            
-            telefono: req.body.telefono
+            fecha: req.body.fecha,
+            cliente: req.body.cliente
         };                
-        SqlSource.setAgencia(cart)
+        SqlSource.setPlatillo(cart)
                 .then((result: void) =>
                 {
                     CtrlUtil.sendOk(res);
                 });            
     }
 
-    deleteAgencia(req: Request, res: Response, next: NextFunction)
+    deletePlatillo(req: Request, res: Response, next: NextFunction)
     {
-        let agenciaId = req.query.id;           
-        SqlSource.deleteAgencia(agenciaId)
+        let platilloId = req.query.id;           
+        SqlSource.deletePlatillo(platilloId)
             .then((result: void) =>
             {
                 CtrlUtil.sendOk(res);

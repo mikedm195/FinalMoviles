@@ -5,18 +5,18 @@ import SqlSource from "../../src/datasource/SqlSource";
 import { CtrlUtil } from "./CtrlUtil";
 
 
-export default class AgenciaCtrl
+export default class FechaCtrl
 {
-    saveAgencia(req: Request, res: Response, next: NextFunction)
+    saveFecha(req: Request, res: Response, next: NextFunction)
     {                
         let cart = { 
-            nombre: req.body.nombre,
-            direccion: req.body.direccion,
-            imagen: req.body.imagen,            
-            telefono: req.body.telefono
+            partida: req.body.partida,
+            regreso: req.body.regreso,
+            transporte: req.body.transporte,            
+            duracion: req.body.duracion
         };
 
-        SqlSource.saveAgencia(cart)
+        SqlSource.saveFecha(cart)
             .then((result: number) =>
             {
                 let out = { id: result }
@@ -24,37 +24,37 @@ export default class AgenciaCtrl
             });
     }
 
-    getAgencia(req: Request, res: Response, next: NextFunction)
+    getFecha(req: Request, res: Response, next: NextFunction)
     {
-        let agenciaId = req.query.id;        
-        SqlSource.getAgencia(agenciaId)
+        let fechaId = req.query.id;        
+        SqlSource.getFecha(fechaId)
             .then((result: any) =>
             {                
                 CtrlUtil.sendObject(res, result);
             });
     }        
 
-    setAgencia(req: Request, res: Response, next: NextFunction)
+    setFecha(req: Request, res: Response, next: NextFunction)
     {
 
         let cart = { 
             id: req.body.id,
-            nombre: req.body.nombre,
-            direccion: req.body.direccion,
-            imagen: req.body.imagen,            
-            telefono: req.body.telefono
+            partida: req.body.partida,
+            regreso: req.body.regreso,
+            transporte: req.body.transporte,            
+            duracion: req.body.duracion
         };                
-        SqlSource.setAgencia(cart)
+        SqlSource.setFecha(cart)
                 .then((result: void) =>
                 {
                     CtrlUtil.sendOk(res);
                 });            
     }
 
-    deleteAgencia(req: Request, res: Response, next: NextFunction)
+    deleteFecha(req: Request, res: Response, next: NextFunction)
     {
-        let agenciaId = req.query.id;           
-        SqlSource.deleteAgencia(agenciaId)
+        let fechaId = req.query.id;           
+        SqlSource.deleteFecha(fechaId)
             .then((result: void) =>
             {
                 CtrlUtil.sendOk(res);
