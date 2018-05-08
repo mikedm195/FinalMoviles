@@ -13,9 +13,7 @@ export class SqlSource implements SqlRepository {
     this.sql = mysql.createConnection({
       host: "localhost",
       user: "1015019_user",
-      password: "1015019",
-      //user: "root",
-      //password: "Mike1995.",
+      password: "1015019",      
       database: "pddm01015019",
     });
   }

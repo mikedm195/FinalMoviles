@@ -17,7 +17,7 @@ var Api = /** @class */ (function () {
         this.init();
     }
     Api.prototype.init = function () {
-        //this.router.get('/cliente/auth/', null);
+        this.router.get('/cliente/auth/', this.clienteCtrl.isClienteAuth);
         this.router.get('/agencia/', this.agenciaCtrl.getAgencia);
         this.router.post('/agencia/', this.agenciaCtrl.saveAgencia);
         this.router.put('/agencia/', this.agenciaCtrl.setAgencia);

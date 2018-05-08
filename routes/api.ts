@@ -31,7 +31,7 @@ export class Api
   public init() : Api
   {
 
-    //this.router.get('/cliente/auth/', null);
+    this.router.get('/cliente/auth/', this.clienteCtrl.isClienteAuth);
 
     this.router.get('/agencia/', this.agenciaCtrl.getAgencia);    
     this.router.post('/agencia/', this.agenciaCtrl.saveAgencia);

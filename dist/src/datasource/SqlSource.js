@@ -7,8 +7,6 @@ var SqlSource = /** @class */ (function () {
             host: "localhost",
             user: "1015019_user",
             password: "1015019",
-            //user: "root",
-            //password: "Mike1995.",
             database: "pddm01015019",
         });
     }
