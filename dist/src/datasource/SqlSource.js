@@ -4,11 +4,11 @@ var mysql = require("mysql");
 var SqlSource = /** @class */ (function () {
     function SqlSource() {
         this.sql = mysql.createConnection({
-            // host: "localhost",
-            // user: "1015019_user",
-            // password: "1015019",
-            user: "root",
-            password: "Mike1995.",
+            host: "localhost",
+            user: "1015019_user",
+            password: "1015019",
+            //user: "root",
+            //password: "Mike1995.",
             database: "pddm01015019",
         });
     }
