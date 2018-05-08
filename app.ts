@@ -38,9 +38,6 @@ export class App
   {
     let dirname = __dirname + "/.."
     this.app.use(express.static(path.join(dirname, "public")));
-    this.app.use('/docs', express.static(path.join(dirname, 'docs')));
-    this.app.set("views", path.join(dirname, "views"));
-    this.app.set("view engine", "pug");
     this.app.use(logger("dev"));
     this.app.use(cors());
     this.app.use(bodyParser.json());
